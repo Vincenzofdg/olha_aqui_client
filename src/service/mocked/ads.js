@@ -1,0 +1,67 @@
+export const byAll = [
+    {
+        id: "019288434",
+        type: "Serralheria",
+        name: "Serralheria do João",
+        phone: "+55 13 98854-2973",
+        url: "https://blog.asmeng.com.br/wp-content/uploads/2021/11/locksmith-in-special-clothes-and-goggles-works-in-production-metal-processing-with-angle-grinder-scaled.jpg",
+        createdAt: "2025-02-07T18:30:00.000Z",
+        updatedAt: "2025-02-07T18:30:00.000Z",
+      },
+      {
+        id: "1236y78341982",
+        type: "Serralheria",
+        name: "Serralheria Antares",
+        phone: "+55 13 98854-2973",
+        url: "https://blog.asmeng.com.br/wp-content/uploads/2021/11/locksmith-in-special-clothes-and-goggles-works-in-production-metal-processing-with-angle-grinder-scaled.jpg",
+        createdAt: "2025-02-07T18:30:00.000Z",
+        updatedAt: "2025-02-07T18:30:00.000Z",
+      },
+      {
+        id: "567812349123",
+        type: "Serralheria",
+        name: "Metalúrgica Silva",
+        phone: "+55 13 98854-2973",
+        url: "https://blog.asmeng.com.br/wp-content/uploads/2021/11/locksmith-in-special-clothes-and-goggles-works-in-production-metal-processing-with-angle-grinder-scaled.jpg",
+        createdAt: "2025-02-07T18:30:00.000Z",
+        updatedAt: "2025-02-07T18:30:00.000Z",
+      },
+      {
+        id: "1298763891234",
+        type: "Construção",
+        name: "Construtora Alfa",
+        phone: "+55 13 98854-2973",
+        url: "https://1.bp.blogspot.com/-2jkW88pl5vU/XKG1opQu8XI/AAAAAAAAaoQ/6EhSBJMEkS06SWA1fV2Ovs8LQpVgRSgCQCLcBGAs/s1600/materiales.jpg",
+        createdAt: "2025-02-07T18:30:00.000Z",
+        updatedAt: "2025-02-07T18:30:00.000Z",
+      },
+      {
+        id: "9876543210987",
+        type: "Construção",
+        name: "Engenharia Beta",
+        phone: "+55 13 98854-2973",
+        url: "https://1.bp.blogspot.com/-2jkW88pl5vU/XKG1opQu8XI/AAAAAAAAaoQ/6EhSBJMEkS06SWA1fV2Ovs8LQpVgRSgCQCLcBGAs/s1600/materiales.jpg",
+        createdAt: "2025-02-07T18:30:00.000Z",
+        updatedAt: "2025-02-07T18:30:00.000Z",
+      },
+      {
+        id: "7318972389835",
+        type: "Manutenção",
+        name: "Manutenção Gama",
+        phone: "+55 13 98854-2973",
+        url: "https://www.novida.com.br/wp-content/uploads/2017/11/Manutencao.jpg",
+        createdAt: "2025-02-07T18:30:00.000Z",
+        updatedAt: "2025-02-07T18:30:00.000Z",
+      },
+      {
+        id: "1827364556678",
+        type: "Manutenção",
+        name: "Elétrica Omega",
+        phone: "+55 13 98854-2973",
+        url: "https://www.novida.com.br/wp-content/uploads/2017/11/Manutencao.jpg",
+        createdAt: "2025-02-07T18:30:00.000Z",
+        updatedAt: "2025-02-07T18:30:00.000Z",
+      }
+];
+
+  
