@@ -1,6 +1,4 @@
 export const contactForm = payload => {
-    console.log(payload);
-
     const isNameValid = payload.name.trim().length >= 3;
     const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email);
     const isDescriptionValid =

@@ -1,5 +1,5 @@
-import React, { useContext, useState, useEffect } from "react";
-import { Global } from "../../context";
+import React, {useContext, useState, useEffect} from 'react';
+import {Global} from '../../context';
 import {
     StyleSheet,
     SafeAreaView,
@@ -7,26 +7,26 @@ import {
     ScrollView,
     Text,
     View,
-} from "react-native";
-import Theme from "../../theme";
-import str from "../../localized";
-import { MenuBtn } from "../../components/Button";
-import { SideMenu } from "../../components/Modal";
+} from 'react-native';
+import Theme from '../../theme';
+import str from '../../localized';
+import {MenuBtn} from '../../components/Button';
+import {SideMenu} from '../../components/Modal';
 import {
     PublicContact,
     PublicAnnounce,
     PublicSector,
-} from "../../components/Card";
-import { HomeList } from "../../components/Flatlist";
-import { getHighlightedNews } from "../../service/action/news";
+} from '../../components/Card';
+import {HomeList} from '../../components/Flatlist';
+import {getHighlightedNews} from '../../service/action/news';
 
-function Home({ navigation: { navigate } }) {
-    const { setLoader, menu, admContacts } = useContext(Global);
+function Home({navigation: {navigate}}) {
+    const {setLoader, menu, admContacts} = useContext(Global);
     const [highlightedNews, setHighlightedNews] = useState([]);
 
     useEffect(() => {
         function RemoveBackHandler() {
-            BackHandler.addEventListener("hardwareBackPress", () => true);
+            BackHandler.addEventListener('hardwareBackPress', () => true);
         }
 
         async function Jobs() {
@@ -44,7 +44,7 @@ function Home({ navigation: { navigate } }) {
             <SideMenu nav={navigate} />
             {!menu && <MenuBtn />}
             <ScrollView style={styles.content}>
-                <PublicContact ntact data={admContacts.phone} />
+                <PublicContact data={admContacts.phone} />
                 <PublicAnnounce data={admContacts.website} />
                 <PublicSector nav={navigate} />
                 <View style={styles.newsHeader}>
@@ -66,26 +66,26 @@ function Home({ navigation: { navigate } }) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: "center",
+        alignItems: 'center',
     },
     content: {
-        width: "100%",
+        width: '100%',
     },
     newsHeader: {
         padding: 15,
-        alignItems: "center",
+        alignItems: 'center',
     },
     newsTitle: {
         fontSize: 20,
-        fontWeight: "800",
+        fontWeight: '800',
         color: Theme.text[2],
         marginBottom: 5,
     },
     newsSubtitle: {
         fontSize: 14,
         color: Theme.text[2],
-        fontWeight: "500",
-        textAlign: "center",
+        fontWeight: '500',
+        textAlign: 'center',
     },
 });
 

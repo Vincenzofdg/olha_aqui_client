@@ -6,30 +6,33 @@ import {
     Text,
     Dimensions,
     ScrollView,
-} from "react-native";
-import Theme from "../../theme";
-import str from "../../localized";
+} from 'react-native';
+import Theme from '../../theme';
+import str from '../../localized';
 
-const { height, width } = Dimensions.get("screen");
+const {height, width} = Dimensions.get('screen');
 
-function FilterAds({ list, isOpen, closeModal, setter }) {
+function FilterAds({list, isOpen, closeModal, setter}) {
     const handleCloseModal = () => closeModal(p => !p);
 
-    console.log(list)
-
-    const btnElement = (text) => {
-        const formatedText = (!text ? str.all : text).charAt(0).toUpperCase() + (!text ? str.all : text).slice(1).toLowerCase();
+    const btnElement = text => {
+        const formatedText =
+            (!text ? str.all : text).charAt(0).toUpperCase() +
+            (!text ? str.all : text).slice(1).toLowerCase();
         const handleSelect = () => {
             setter(text);
             handleCloseModal();
         };
 
         return (
-            <TouchableOpacity key={text} style={styles.btnContainer} onPress={handleSelect}>
+            <TouchableOpacity
+                key={text}
+                style={styles.btnContainer}
+                onPress={handleSelect}>
                 <Text style={styles.btnText}>{formatedText}</Text>
             </TouchableOpacity>
-        )
-    }
+        );
+    };
 
     return (
         <Modal animationType="fade" transparent={true} visible={isOpen}>
@@ -38,7 +41,10 @@ function FilterAds({ list, isOpen, closeModal, setter }) {
                     {btnElement(undefined)}
                     {list.map(elem => btnElement(elem))}
                 </ScrollView>
-                <TouchableOpacity style={styles.mask} onPress={handleCloseModal} />
+                <TouchableOpacity
+                    style={styles.mask}
+                    onPress={handleCloseModal}
+                />
             </View>
         </Modal>
     );
@@ -46,19 +52,19 @@ function FilterAds({ list, isOpen, closeModal, setter }) {
 
 const styles = StyleSheet.create({
     container: {
-        position: "absolute",
+        position: 'absolute',
         zIndex: 1,
         width,
         height,
     },
     optionsContainer: {
-        position: "absolute",
+        position: 'absolute',
         zIndex: 2,
         top: height * 0.2,
-        alignSelf: "center",
+        alignSelf: 'center',
         backgroundColor: Theme.background[3],
-        display: "flex",
-        flexDirection: "column",
+        display: 'flex',
+        flexDirection: 'column',
         borderRadius: 20,
         width: width * 0.7,
         minHeight: height * 0.2,
@@ -71,12 +77,12 @@ const styles = StyleSheet.create({
     },
     btnText: {
         fontSize: 18,
-        fontWeight: "700",
+        fontWeight: '700',
     },
     mask: {
         flexGrow: 1,
-        backgroundColor: "rgba(0, 0, 0, 0.2)",
+        backgroundColor: 'rgba(0, 0, 0, 0.2)',
     },
 });
 
-export { FilterAds };
+export {FilterAds};

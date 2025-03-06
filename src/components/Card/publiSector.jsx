@@ -1,12 +1,13 @@
-import { StyleSheet, Image, Text, TouchableOpacity, View } from "react-native";
+import {StyleSheet, Image, Text, TouchableOpacity, View} from 'react-native';
 
-import BuildingImg from "../../assets/building.png";
-import PeopleImg from "../../assets/people.png";
+import BuildingImg from '../../assets/building.png';
+import PeopleImg from '../../assets/people.png';
 
-import str from "../../localized";
-import Theme from "../../theme";
+import str from '../../localized';
+import Theme from '../../theme';
+import AdsFiltered from '../../screens/Destination/adFilteredList';
 
-function PublicSector({ nav }) {
+function PublicSector({nav}) {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>{str.card.announceSector.title}</Text>
@@ -15,13 +16,13 @@ function PublicSector({ nav }) {
                     const getPicture = [BuildingImg, PeopleImg];
 
                     const handlePress = () => {
-                        console.log(btn);
+                        nav('AdsFiltered', {status: i > 0});
                     };
 
                     return (
                         <TouchableOpacity
                             onPress={handlePress}
-                            key={"home-sector-" + i}>
+                            key={'home-sector-' + i}>
                             <Image source={getPicture[i]} style={styles.img} />
                             <Text style={styles.imageLabel}>{btn}</Text>
                         </TouchableOpacity>
@@ -34,7 +35,7 @@ function PublicSector({ nav }) {
 
 const styles = StyleSheet.create({
     container: {
-        width: "100%",
+        width: '100%',
         backgroundColor: Theme.background[6],
         padding: 20,
         marginTop: 20,
@@ -42,15 +43,15 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 18,
         color: Theme.text[1],
-        textAlign: "center",
+        textAlign: 'center',
         marginBottom: 20,
     },
     optionsContainer: {
-        flexDirection: "row",
-        justifyContent: "space-around",
+        flexDirection: 'row',
+        justifyContent: 'space-around',
     },
     option: {
-        alignItems: "center",
+        alignItems: 'center',
     },
     optionImage: {
         width: 100,
@@ -66,14 +67,14 @@ const styles = StyleSheet.create({
         height: 80,
         padding: 10,
         tintColor: Theme.text[1],
-        objectFit: "contain",
+        objectFit: 'contain',
     },
     imageLabel: {
-        textAlign: "center",
+        textAlign: 'center',
         color: Theme.text[1],
         fontSize: 16,
         marginTop: 8,
     },
 });
 
-export { PublicSector };
+export {PublicSector};
