@@ -1,8 +1,8 @@
 import {Linking} from 'react-native';
 
-export const openBrowser = (path) => Linking.openURL(path);
+export const openBrowser = path => Linking.openURL(path);
 
-export const phone = (number) => {
+export const phone = number => {
     const url = 'tel:' + number;
     try {
         Linking.openURL(url);
@@ -11,8 +11,8 @@ export const phone = (number) => {
     }
 };
 
-export const whatsapp = (number) => {
-    const url = 'https://wa.me/'+ number;
+export const whatsapp = number => {
+    const url = 'https://wa.me/' + number;
     try {
         Linking.openURL(url);
     } catch (err) {

@@ -1,6 +1,6 @@
 import endpoint from '../api';
 
-export const getAllLaw = async (token = "") => {
+export const getAllLaw = async (token = '') => {
     try {
         const result = await endpoint.get('/laws');
 
@@ -11,7 +11,7 @@ export const getAllLaw = async (token = "") => {
     }
 };
 
-export const getLawById = async (id, token = "") => {
+export const getLawById = async (id, token = '') => {
     try {
         const result = await endpoint.get(`/laws/${id}`);
         return result.data;

@@ -1,7 +1,7 @@
-import { StyleSheet, Dimensions, View } from "react-native";
-import { GoBackBtn } from "../Button";
+import {StyleSheet, Dimensions, View} from 'react-native';
+import {GoBackBtn} from '../Button';
 
-const { width } = Dimensions.get("screen");
+const {width} = Dimensions.get('screen');
 
 function GenericHeader() {
     return (
@@ -13,9 +13,9 @@ function GenericHeader() {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: "rgba(0, 0, 0, 0.3)",
+        backgroundColor: 'rgba(0, 0, 0, 0.3)',
         width,
     },
 });
 
-export { GenericHeader };
+export {GenericHeader};

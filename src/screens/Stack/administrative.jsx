@@ -1,8 +1,8 @@
-import { StyleSheet, SafeAreaView, Text } from "react-native";
-import { MenuBtn } from "../../components/Button";
-import { SideMenu } from "../../components/Modal";
+import {StyleSheet, SafeAreaView, Text} from 'react-native';
+import {MenuBtn} from '../../components/Button';
+import {SideMenu} from '../../components/Modal';
 
-function Administrative({ navigation: { navigate } }) {
+function Administrative({navigation: {navigate}}) {
     return (
         <SafeAreaView style={styles.container}>
             <MenuBtn />
@@ -15,7 +15,7 @@ function Administrative({ navigation: { navigate } }) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: "center",
+        alignItems: 'center',
     },
 });
 

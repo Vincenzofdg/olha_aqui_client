@@ -1,34 +1,35 @@
 import endpoint from '../api';
 
-export const getAllAnnounces = async (token = "") => {
+export const getAllAnnounces = async (token = '') => {
     try {
         const {data} = await endpoint.get('/publication/announce');
 
         const getAllTagsByAnnounces = data.reduce((acc, cur) => {
-            const currentTags = cur.tag.split(";");
+            const currentTags = cur.tag.split(';');
 
             for (const tag of currentTags) {
-                const findIfTagIsOnList = acc.includes(tag)
+                const findIfTagIsOnList = acc.includes(tag);
 
                 if (!findIfTagIsOnList && tag.length > 0) {
-                    acc.push(tag)
+                    acc.push(tag);
                 }
             }
 
             return acc;
-        }, [])
+        }, []);
 
+        const sortedData = data.sort(
+            (a, b) => new Date(b.createdAt) - new Date(a.createdAt),
+        );
 
-        const sortedData = data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-
-        return { data: sortedData, tags: getAllTagsByAnnounces};
+        return {data: sortedData, tags: getAllTagsByAnnounces};
     } catch (error) {
         console.error(error);
         return [];
     }
 };
 
-export const getNewsById = async (id, token = "") => {
+export const getNewsById = async (id, token = '') => {
     try {
         const result = await endpoint.get(`/publication/announce/${id}`);
         return result.data;
@@ -38,7 +39,7 @@ export const getNewsById = async (id, token = "") => {
     }
 };
 
-export const getHighlightedNews = async (token = "") => {
+export const getHighlightedNews = async (token = '') => {
     try {
         const result = await endpoint.get(`/publication/announce`);
         return result.data.filter(item => !!item.highlighted);

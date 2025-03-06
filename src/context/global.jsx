@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
-import { Global as Context } from ".";
-import { getAllContacts } from "../service/action/contacts";
+import {useState, useEffect} from 'react';
+import {Global as Context} from '.';
+import {getAllContacts} from '../service/action/contacts';
 
-function GlobalState({ children }) {
+function GlobalState({children}) {
     const [userInfo, setUserInfo] = useState({
         id: undefined,
         name: undefined,
@@ -11,15 +11,15 @@ function GlobalState({ children }) {
     const [admContacts, setAdmContacts] = useState([]);
     const [loader, setLoader] = useState(false);
     const [menu, setMenu] = useState(false);
-    const [currentPage, setCurrentPage] = useState("Home");
+    const [currentPage, setCurrentPage] = useState('Home');
 
     useEffect(() => {
         async function Jobs() {
             const fetchAdmContacts = await getAllContacts();
-            setAdmContacts(fetchAdmContacts)
+            setAdmContacts(fetchAdmContacts);
         }
 
-        Jobs()
+        Jobs();
     }, []);
 
     const obj = {

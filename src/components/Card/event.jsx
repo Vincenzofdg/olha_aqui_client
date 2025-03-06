@@ -4,13 +4,13 @@ import {
     Dimensions,
     View,
     TouchableOpacity,
-} from "react-native";
-import Theme from "../../theme";
-import { shortDateDayFormat } from "../../tools";
-import str from "../../localized";
-const { width } = Dimensions.get("screen");
+} from 'react-native';
+import Theme from '../../theme';
+import {shortDateDayFormat} from '../../tools';
+import str from '../../localized';
+const {width} = Dimensions.get('screen');
 
-function EventCard({ data, nav }) {
+function EventCard({data, nav}) {
     const handlePress = () => {
         console.log(data);
     };
@@ -33,13 +33,13 @@ function EventCard({ data, nav }) {
 const styles = StyleSheet.create({
     cardContainer: {
         backgroundColor: Theme.background[4],
-        alignSelf: "center",
+        alignSelf: 'center',
         borderRadius: 12,
         padding: 12,
         width: width * 0.9,
-        shadowColor: "#000",
+        shadowColor: '#000',
         shadowOpacity: 0.1,
-        shadowOffset: { width: 0, height: 4 },
+        shadowOffset: {width: 0, height: 4},
         shadowRadius: 6,
         elevation: 3,
         marginVertical: 8,
@@ -47,14 +47,14 @@ const styles = StyleSheet.create({
     title: {
         color: Theme.text[2],
         fontSize: 17,
-        fontWeight: "bold",
+        fontWeight: 'bold',
         marginBottom: 8,
     },
     description: {
         color: Theme.text[2],
         fontSize: 13,
         marginBottom: 13,
-        textAlign: "justify",
+        textAlign: 'justify',
     },
     date: {
         fontSize: 13,
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
         color: Theme.text[3],
     },
     linkBtn: {
-        position: "absolute",
+        position: 'absolute',
         bottom: 10,
         right: 10,
         width: 120,
@@ -75,9 +75,9 @@ const styles = StyleSheet.create({
     btnText: {
         fontSize: 14,
         color: Theme.text[4],
-        fontWeight: "bold",
-        textAlign: "center",
+        fontWeight: 'bold',
+        textAlign: 'center',
     },
 });
 
-export { EventCard };
+export {EventCard};

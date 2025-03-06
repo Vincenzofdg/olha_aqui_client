@@ -1,10 +1,12 @@
 import endpoint from '../api';
 
-export const getAllNews = async (token = "") => {
+export const getAllNews = async (token = '') => {
     try {
-        const { data } = await endpoint.get('/publication/article');
+        const {data} = await endpoint.get('/publication/article');
 
-        const sortedData = data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+        const sortedData = data.sort(
+            (a, b) => new Date(b.createdAt) - new Date(a.createdAt),
+        );
 
         return sortedData;
     } catch (error) {
@@ -13,7 +15,7 @@ export const getAllNews = async (token = "") => {
     }
 };
 
-export const getNewsById = async (id, token = "") => {
+export const getNewsById = async (id, token = '') => {
     try {
         const result = await endpoint.get(`/publication/article/${id}`);
         return result.data;
@@ -23,7 +25,7 @@ export const getNewsById = async (id, token = "") => {
     }
 };
 
-export const getHighlightedNews = async (token = "") => {
+export const getHighlightedNews = async (token = '') => {
     try {
         const result = await endpoint.get(`/publication/article`);
         return result.data.filter(item => !!item.highlighted);

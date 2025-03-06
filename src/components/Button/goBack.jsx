@@ -1,6 +1,6 @@
-import { StyleSheet, TouchableOpacity, View } from "react-native";
-import { useNavigation } from "@react-navigation/native";
-import Theme from "../../theme";
+import {StyleSheet, TouchableOpacity, View} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+import Theme from '../../theme';
 
 function GoBackBtn() {
     const navigation = useNavigation();
@@ -9,9 +9,9 @@ function GoBackBtn() {
 
     return (
         <TouchableOpacity style={styles.container} onPress={handlePress}>
-            {Array.from({ length: 2 }).map((_a, i) => (
+            {Array.from({length: 2}).map((_a, i) => (
                 <View
-                    key={"menu-bar-" + i}
+                    key={'menu-bar-' + i}
                     style={[styles.TopBar, i === 1 && styles.bottomBar]}
                 />
             ))}
@@ -21,13 +21,13 @@ function GoBackBtn() {
 
 const styles = StyleSheet.create({
     container: {
-        alignSelf: "flex-start",
+        alignSelf: 'flex-start',
         marginTop: 5,
         marginLeft: 10,
 
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
         width: 50,
         height: 50,
         padding: 10,
@@ -35,15 +35,15 @@ const styles = StyleSheet.create({
     TopBar: {
         backgroundColor: Theme.background[4],
         height: 3,
-        width: "90%",
+        width: '90%',
         borderRadius: 20,
         marginBottom: 5,
         marginTop: 5,
-        transform: [{ rotate: "-30deg" }],
+        transform: [{rotate: '-30deg'}],
     },
     bottomBar: {
-        transform: [{ rotate: "30deg" }],
+        transform: [{rotate: '30deg'}],
     },
 });
 
-export { GoBackBtn };
+export {GoBackBtn};

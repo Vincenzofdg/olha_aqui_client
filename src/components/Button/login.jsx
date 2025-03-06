@@ -1,18 +1,18 @@
-import { useContext } from "react";
-import { StyleSheet, TouchableOpacity, Text, Dimensions } from "react-native";
-import { Global } from "../../context";
-import str from "../../localized";
+import {useContext} from 'react';
+import {StyleSheet, TouchableOpacity, Text, Dimensions} from 'react-native';
+import {Global} from '../../context';
+import str from '../../localized';
 
-import Theme from "../../theme";
+import Theme from '../../theme';
 
-const { width } = Dimensions.get("screen");
+const {width} = Dimensions.get('screen');
 
-function LoginBtn({ nav }) {
-    const { setLoader } = useContext(Global);
+function LoginBtn({nav}) {
+    const {setLoader} = useContext(Global);
 
     const handlePress = async () => {
         setLoader(true);
-        nav("Home");
+        nav('Home');
     };
 
     return (
@@ -34,10 +34,10 @@ const styles = StyleSheet.create({
     },
     text: {
         color: Theme.text[1],
-        textAlign: "center",
+        textAlign: 'center',
         fontSize: 18,
-        fontWeight: "700",
+        fontWeight: '700',
     },
 });
 
-export { LoginBtn };
+export {LoginBtn};

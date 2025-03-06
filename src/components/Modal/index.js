@@ -1,2 +1,2 @@
-export * from "./sideMenu";
-export * from "./filterAds";
+export * from './sideMenu';
+export * from './filterAds';

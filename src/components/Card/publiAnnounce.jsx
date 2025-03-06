@@ -6,13 +6,13 @@ import {
     View,
     Image,
     Platform,
-} from "react-native";
-import ModalIcon from "../../assets/PredioIcon.png";
-import str from "../../localized";
-import Theme from "../../theme";
+} from 'react-native';
+import ModalIcon from '../../assets/PredioIcon.png';
+import str from '../../localized';
+import Theme from '../../theme';
 import {openBrowser} from '../../tools';
 
-const { width } = Dimensions.get("screen");
+const {width} = Dimensions.get('screen');
 
 function PublicAnnounce({data}) {
     return (
@@ -42,35 +42,35 @@ function PublicAnnounce({data}) {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: Theme.background[4],
-        alignSelf: "center",
+        alignSelf: 'center',
         width: width * 0.9,
         height: 260,
-        flexDirection: "row",
+        flexDirection: 'row',
         borderRadius: 15,
-        overflow: "hidden",
-        position: "relative",
+        overflow: 'hidden',
+        position: 'relative',
         marginTop: 30,
-        shadowColor: "#000000",
+        shadowColor: '#000000',
         shadowOffset: {
             width: -2,
             height: 2,
         },
-        shadowOpacity: Platform.OS === "ios" ? 0.4 : 1,
-        shadowRadius: Platform.OS === "ios" ? 2 : 12,
+        shadowOpacity: Platform.OS === 'ios' ? 0.4 : 1,
+        shadowRadius: Platform.OS === 'ios' ? 2 : 12,
         elevation: 4,
     },
     textContainer: {
         flex: 2,
-        justifyContent: "space-around",
+        justifyContent: 'space-around',
         padding: 15,
     },
     title: {
         fontSize: 18,
-        fontWeight: "bold",
+        fontWeight: 'bold',
     },
     description: {
-        width: "95%",
-        textAlign: "left",
+        width: '95%',
+        textAlign: 'left',
         paddingLeft: 5,
         fontSize: 15,
         lineHeight: 20,
@@ -81,21 +81,21 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         borderRadius: 8,
         marginTop: 20,
-        alignSelf: "flex-start",
+        alignSelf: 'flex-start',
     },
     buttonText: {
         color: Theme.text[1],
-        fontWeight: "bold",
+        fontWeight: 'bold',
         fontSize: 14,
     },
     image: {
         flex: 1,
-        width: "62%",
-        height: "62%",
-        position: "absolute",
+        width: '62%',
+        height: '62%',
+        position: 'absolute',
         bottom: -23,
         right: -45,
     },
 });
 
-export { PublicAnnounce };
+export {PublicAnnounce};

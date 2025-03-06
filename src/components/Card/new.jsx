@@ -5,21 +5,24 @@ import {
     Dimensions,
     View,
     Image,
-} from "react-native";
-import Theme from "../../theme";
-import str from "../../localized";
-import { shortDateDayFormat } from "../../tools";
+} from 'react-native';
+import Theme from '../../theme';
+import str from '../../localized';
+import {shortDateDayFormat} from '../../tools';
 
-const { width } = Dimensions.get("screen");
+const {width} = Dimensions.get('screen');
 
-function NewCard({ data, nav }) {
+function NewCard({data, nav}) {
     const handlePress = () => {
-        nav("Article", { ...data });
+        nav('Article', {...data});
     };
 
     return (
         <TouchableOpacity style={styles.card} onPress={handlePress}>
-            <Image source={{ uri: str.website + data.image }} style={styles.image} />
+            <Image
+                source={{uri: str.website + data.image}}
+                style={styles.image}
+            />
             <View style={styles.content}>
                 <Text style={styles.title}>{data.title}</Text>
                 <Text style={styles.description}>{data.description}</Text>
@@ -28,7 +31,9 @@ function NewCard({ data, nav }) {
                         {str.date(shortDateDayFormat(data.createdAt))}
                     </Text>
                     {data.tag.split(';').length > 1 && (
-                        <Text style={styles.tag}>#{data.tag.replace(/;/g, " #")}</Text>
+                        <Text style={styles.tag}>
+                            #{data.tag.replace(/;/g, ' #')}
+                        </Text>
                     )}
                 </View>
             </View>
@@ -38,24 +43,24 @@ function NewCard({ data, nav }) {
 
 const styles = StyleSheet.create({
     card: {
-        alignSelf: "center",
+        alignSelf: 'center',
         width: width * 0.9,
         backgroundColor: Theme.background[4],
         borderRadius: 10,
         shadowColor: Theme.background[7],
-        shadowOffset: { width: 0, height: 2 },
+        shadowOffset: {width: 0, height: 2},
         shadowOpacity: 0.1,
         shadowRadius: 4,
         elevation: 3,
         marginVertical: 10,
-        overflow: "hidden",
+        overflow: 'hidden',
     },
     image: {
-        backgroundColor: "gray",
-        alignSelf: "center",
-        width: "100%",
+        backgroundColor: 'gray',
+        alignSelf: 'center',
+        width: '100%',
         height: 160,
-        resizeMode: "cover",
+        resizeMode: 'cover',
         marginBottom: 10,
     },
     content: {
@@ -65,7 +70,7 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 16,
-        fontWeight: "bold",
+        fontWeight: 'bold',
         color: Theme.text[2],
         marginBottom: 5,
     },
@@ -75,9 +80,9 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     footer: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
     },
     date: {
         fontSize: 13,
@@ -86,11 +91,11 @@ const styles = StyleSheet.create({
         backgroundColor: Theme.background[1],
         color: Theme.text[1],
         fontSize: 12,
-        fontWeight: "bold",
+        fontWeight: 'bold',
         paddingVertical: 5,
         paddingHorizontal: 10,
         borderRadius: 5,
     },
 });
 
-export { NewCard };
+export {NewCard};

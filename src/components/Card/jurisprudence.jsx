@@ -4,19 +4,19 @@ import {
     Dimensions,
     View,
     TouchableOpacity,
-} from "react-native";
-import { useNavigation } from "@react-navigation/native";
-import str from "../../localized";
-import Theme from "../../theme";
-import { shortDateDayFormat } from "../../tools";
+} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+import str from '../../localized';
+import Theme from '../../theme';
+import {shortDateDayFormat} from '../../tools';
 
-const { width } = Dimensions.get("screen");
+const {width} = Dimensions.get('screen');
 
-function JurisprudenceCard({ data }) {
+function JurisprudenceCard({data}) {
     const navigation = useNavigation();
 
     const handlePress = () => {
-        navigation.navigate("LawWebView", { link: data.link });
+        navigation.navigate('LawWebView', {link: data.link});
     };
 
     return (
@@ -37,13 +37,13 @@ function JurisprudenceCard({ data }) {
 const styles = StyleSheet.create({
     cardContainer: {
         backgroundColor: Theme.background[4],
-        alignSelf: "center",
+        alignSelf: 'center',
         borderRadius: 12,
         padding: 12,
         width: width * 0.9,
-        shadowColor: "#000",
+        shadowColor: '#000',
         shadowOpacity: 0.1,
-        shadowOffset: { width: 0, height: 4 },
+        shadowOffset: {width: 0, height: 4},
         shadowRadius: 6,
         elevation: 3,
         marginVertical: 8,
@@ -51,14 +51,14 @@ const styles = StyleSheet.create({
     title: {
         color: Theme.text[2],
         fontSize: 17,
-        fontWeight: "bold",
+        fontWeight: 'bold',
         marginBottom: 8,
     },
     description: {
         color: Theme.text[2],
         fontSize: 13,
         marginBottom: 13,
-        textAlign: "justify",
+        textAlign: 'justify',
     },
     date: {
         fontSize: 13,
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
         color: Theme.text[3],
     },
     linkBtn: {
-        position: "absolute",
+        position: 'absolute',
         bottom: 10,
         right: 10,
         width: 100,
@@ -79,9 +79,9 @@ const styles = StyleSheet.create({
     btnText: {
         fontSize: 14,
         color: Theme.text[4],
-        fontWeight: "bold",
-        textAlign: "center",
+        fontWeight: 'bold',
+        textAlign: 'center',
     },
 });
 
-export { JurisprudenceCard };
+export {JurisprudenceCard};

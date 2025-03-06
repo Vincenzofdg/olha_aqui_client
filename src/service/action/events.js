@@ -1,6 +1,6 @@
-import { byAll } from "../mocked/events";
+import {byAll} from '../mocked/events';
 
-export const getAllEvents = async (token = "") => {
+export const getAllEvents = async (token = '') => {
     try {
         // const result = byAll;
         return byAll;

@@ -1,10 +1,10 @@
-import { StyleSheet, TouchableOpacity, Text, Dimensions } from "react-native";
-import str from "../../localized";
-import Theme from "../../theme";
+import {StyleSheet, TouchableOpacity, Text, Dimensions} from 'react-native';
+import str from '../../localized';
+import Theme from '../../theme';
 
-const { width } = Dimensions.get("screen");
+const {width} = Dimensions.get('screen');
 
-function SendBtn({ action, canBenPressed }) {
+function SendBtn({action, canBenPressed}) {
     const handlePress = async () => {
         action();
     };
@@ -26,22 +26,22 @@ const styles = StyleSheet.create({
     container: {
         borderRadius: 8,
         paddingVertical: 10,
-        alignItems: "center",
+        alignItems: 'center',
         marginTop: 10,
-        alignSelf: "center",
+        alignSelf: 'center',
         width: width * 0.5,
     },
     text: {
-        color: "#fff",
+        color: '#fff',
         fontSize: 16,
-        fontWeight: "bold",
+        fontWeight: 'bold',
     },
     selected: {
-        backgroundColor: "#0C313A",
+        backgroundColor: '#0C313A',
     },
     disabled: {
-        backgroundColor: "#9C9C9C",
+        backgroundColor: '#9C9C9C',
     },
 });
 
-export { SendBtn };
+export {SendBtn};

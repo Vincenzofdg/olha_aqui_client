@@ -1,6 +1,6 @@
 import endpoint from '../api';
 
-export const getAllContacts = async (token = "") => {
+export const getAllContacts = async (token = '') => {
     try {
         const result = await endpoint.get('/contacts');
         return result.data;

@@ -1,23 +1,23 @@
-import React, { useState, useEffect } from "react";
-import { StyleSheet, SafeAreaView, Text, View } from "react-native";
-import { MenuBtn } from "../../components/Button";
-import { SideMenu } from "../../components/Modal";
-import { ScrollView } from "react-native-gesture-handler";
-import { getAllEvents } from "../../service/action/events";
-import { EventCard } from "../../components/Card/event";
-import str from "../../localized";
-import Theme from "../../theme"; 
+import React, {useState, useEffect} from 'react';
+import {StyleSheet, SafeAreaView, Text, View} from 'react-native';
+import {MenuBtn} from '../../components/Button';
+import {SideMenu} from '../../components/Modal';
+import {ScrollView} from 'react-native-gesture-handler';
+import {getAllEvents} from '../../service/action/events';
+import {EventCard} from '../../components/Card/event';
+import str from '../../localized';
+import Theme from '../../theme';
 
-function BS({ navigation: { navigate } }) {
+function BS({navigation: {navigate}}) {
     const [events, setEvents] = useState([]);
 
     useEffect(() => {
         const fetchEvents = async () => {
             const eventsData = await getAllEvents();
-            setEvents(eventsData); 
+            setEvents(eventsData);
         };
 
-        fetchEvents(); 
+        fetchEvents();
     }, []);
 
     return (
@@ -32,7 +32,7 @@ function BS({ navigation: { navigate } }) {
                 {events.length === 0 ? (
                     <Text style={styles.noEventsText}>{str.notEvents}</Text>
                 ) : (
-                    events.map((event) => (
+                    events.map(event => (
                         <EventCard key={event.id} data={event} nav={navigate} />
                     ))
                 )}
@@ -44,30 +44,30 @@ function BS({ navigation: { navigate } }) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: "center",
+        alignItems: 'center',
     },
     content: {
-        width: "100%",
+        width: '100%',
     },
     noEventsText: {
-        textAlign: "center",
-        color: "#888",
+        textAlign: 'center',
+        color: '#888',
         marginTop: 20,
     },
     header: {
         padding: 10,
         marginTop: 75,
-        alignItems: "center",
+        alignItems: 'center',
     },
     title: {
         fontSize: 24,
-        fontWeight: "bold",
+        fontWeight: 'bold',
         color: Theme.text[2],
         marginBottom: 8,
     },
     subtitle: {
         fontSize: 16,
-        textAlign: "center",
+        textAlign: 'center',
         color: Theme.text[2],
     },
 });

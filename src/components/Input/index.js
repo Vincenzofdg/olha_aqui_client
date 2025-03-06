@@ -1,1 +1,1 @@
-export * from "./textForm";
+export * from './textForm';
