@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
         zIndex: 1,
 
         alignSelf: "flex-start",
-        marginTop: 35,
+        marginTop: 20,
         marginLeft: 20,
 
         borderRadius: 100,

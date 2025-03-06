@@ -10,7 +10,7 @@ import {MenuBtn} from '../../components/Button';
 import {FilterAds} from '../../components/Modal';
 
 function Ads({ navigation: { navigate } }) {
-    const { setLoader, menu } = useContext(Global);
+    const { setLoader, loader, menu } = useContext(Global);
     const [data, setData] = useState([]);
     const [tags, setTags] = useState([]);
     const [modalState, setModalState] = useState(false);
@@ -53,7 +53,7 @@ function Ads({ navigation: { navigate } }) {
                 {
                     data.length !== 0 ? (
                         data.map(item => <AdCard key={item.id} data={item} nav={navigate} />)
-                    ) : <></>
+                    ) : !loader && <Text style={[styles.subtitle, {marginTop: 80}]}>{str.notAds}</Text>
                 }
             </ScrollView>
         </SafeAreaView>
@@ -96,10 +96,6 @@ const styles = StyleSheet.create({
         padding: 10,
         alignSelf: "flex-start",
         marginTop: 15,
-        // paddingVertical: 8,
-        // paddingHorizontal: 16,
-        // marginHorizontal: 5,
-        // marginBottom: 10,
     },
     buttonText: {
         fontSize: 14,

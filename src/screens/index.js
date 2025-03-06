@@ -6,9 +6,12 @@ import Administrative from "./Stack/administrative";
 import BS from "./Stack/bs";
 import Jurisprudence from "./Stack/jurisprudence";
 import Contact from "./Stack/contact";
+
+
 import LawWebView from "./Stack/webView";
 
 import Article from "./Destination/article";
+import Ad from "./Destination/ad";
 
 export const stackScreen = {
     LogIn,
@@ -20,8 +23,9 @@ export const stackScreen = {
     Jurisprudence,
     Contact,
     // Isolated
-    Article,
     LawWebView,
+    Article,
+    Ad,
 };
 
 export const tabScreen = {};

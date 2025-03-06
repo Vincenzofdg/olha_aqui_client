@@ -6,20 +6,14 @@ import {
     View,
     Image,
     Platform,
-    Linking,
-    Alert,
 } from "react-native";
 import str from "../../localized";
 import Theme from "../../theme";
+import {phone} from "../../tools";
 
 const { width } = Dimensions.get("screen");
 
 function PublicContact({data}) {
-    const handlePress = async () => {
-        Linking.openURL(`tel:${data}`)
-            .catch(err => console.error('Erro ao tentar fazer a ligação', err));
-    };
-
     return (
         <View style={styles.container}>
             <Image
@@ -31,7 +25,7 @@ function PublicContact({data}) {
                 <Text style={styles.title}>{str.card.contact.content}</Text>
                 <TouchableOpacity
                     style={styles.button}
-                    onPress={handlePress}>
+                    onPress={() => phone(data)}>
                     <Text style={styles.buttonText}>
                         {str.card.contact.btn}
                     </Text>
@@ -51,7 +45,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         overflow: "hidden",
         position: "relative",
-        marginTop: 75,
+        marginTop: 80,
         shadowColor: "#000",
         shadowOffset: { width: -2, height: 2 },
         shadowOpacity: Platform.OS === "ios" ? 0.4 : 1,

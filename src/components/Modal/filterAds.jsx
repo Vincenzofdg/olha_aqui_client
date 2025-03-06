@@ -15,6 +15,8 @@ const { height, width } = Dimensions.get("screen");
 function FilterAds({ list, isOpen, closeModal, setter }) {
     const handleCloseModal = () => closeModal(p => !p);
 
+    console.log(list)
+
     const btnElement = (text) => {
         const formatedText = (!text ? str.all : text).charAt(0).toUpperCase() + (!text ? str.all : text).slice(1).toLowerCase();
         const handleSelect = () => {

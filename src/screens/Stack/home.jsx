@@ -44,7 +44,7 @@ function Home({ navigation: { navigate } }) {
             <SideMenu nav={navigate} />
             {!menu && <MenuBtn />}
             <ScrollView style={styles.content}>
-                <PublicContact data={admContacts.phone} />
+                <PublicContact ntact data={admContacts.phone} />
                 <PublicAnnounce data={admContacts.website} />
                 <PublicSector nav={navigate} />
                 <View style={styles.newsHeader}>
@@ -69,7 +69,6 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     content: {
-        marginTop: 30,
         width: "100%",
     },
     newsHeader: {

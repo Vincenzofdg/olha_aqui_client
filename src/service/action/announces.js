@@ -10,7 +10,7 @@ export const getAllAnnounces = async (token = "") => {
             for (const tag of currentTags) {
                 const findIfTagIsOnList = acc.includes(tag)
 
-                if (!findIfTagIsOnList) {
+                if (!findIfTagIsOnList && tag.length > 0) {
                     acc.push(tag)
                 }
             }

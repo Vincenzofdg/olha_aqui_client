@@ -13,6 +13,7 @@ function GenericHeader() {
 
 const styles = StyleSheet.create({
     container: {
+        backgroundColor: "rgba(0, 0, 0, 0.3)",
         width,
     },
 });

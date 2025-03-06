@@ -6,19 +6,15 @@ import {
     View,
     Image,
     Platform,
-    Linking,
-    Alert,
 } from "react-native";
 import ModalIcon from "../../assets/PredioIcon.png";
 import str from "../../localized";
 import Theme from "../../theme";
-import { getContactByType } from "../../service/action/contacts";
+import {openBrowser} from '../../tools';
 
 const { width } = Dimensions.get("screen");
 
 function PublicAnnounce({data}) {
-    const handlePress = () => Linking.openURL(data);
-
     return (
         <View style={styles.container}>
             <View style={styles.textContainer}>
@@ -28,7 +24,7 @@ function PublicAnnounce({data}) {
                 </Text>
                 <TouchableOpacity
                     style={styles.button}
-                    onPress={handlePress}>
+                    onPress={() => openBrowser(data)}>
                     <Text style={styles.buttonText}>
                         {str.card.announce.btn}
                     </Text>

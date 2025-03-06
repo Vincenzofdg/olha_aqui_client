@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { production_url } from './environments';
+import { url } from './environments';
 
 const api = axios.create({
-    baseURL: production_url,
+    baseURL: url,
 });
 
 export default api;

@@ -18,8 +18,8 @@ function NewCard({ data, nav }) {
     };
 
     return (
-        <View style={styles.card}>
-            <Image source={{ uri: data.image }} style={styles.image} />
+        <TouchableOpacity style={styles.card} onPress={handlePress}>
+            <Image source={{ uri: str.website + data.image }} style={styles.image} />
             <View style={styles.content}>
                 <Text style={styles.title}>{data.title}</Text>
                 <Text style={styles.description}>{data.description}</Text>
@@ -27,14 +27,12 @@ function NewCard({ data, nav }) {
                     <Text style={styles.date}>
                         {str.date(shortDateDayFormat(data.createdAt))}
                     </Text>
-                    <TouchableOpacity
-                        onPress={handlePress}
-                        style={styles.button}>
-                        <Text style={styles.buttonText}>{str.seeMore}</Text>
-                    </TouchableOpacity>
+                    {data.tag.split(';').length > 1 && (
+                        <Text style={styles.tag}>#{data.tag.replace(/;/g, " #")}</Text>
+                    )}
                 </View>
             </View>
-        </View>
+        </TouchableOpacity>
     );
 }
 
@@ -53,6 +51,7 @@ const styles = StyleSheet.create({
         overflow: "hidden",
     },
     image: {
+        backgroundColor: "gray",
         alignSelf: "center",
         width: "100%",
         height: 160,
@@ -83,16 +82,14 @@ const styles = StyleSheet.create({
     date: {
         fontSize: 13,
     },
-    button: {
+    tag: {
         backgroundColor: Theme.background[1],
-        paddingVertical: 5,
-        paddingHorizontal: 15,
-        borderRadius: 5,
-    },
-    buttonText: {
         color: Theme.text[1],
         fontSize: 12,
         fontWeight: "bold",
+        paddingVertical: 5,
+        paddingHorizontal: 10,
+        borderRadius: 5,
     },
 });
 

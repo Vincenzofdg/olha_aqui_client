@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import {
     StyleSheet,
     Text,
@@ -6,34 +5,34 @@ import {
     View,
     TouchableOpacity,
     Image,
-    Linking,
-    Alert,
 } from "react-native";
 import Theme from "../../theme";
 import str from "../../localized";
 import { shortDateDayFormat } from "../../tools";
-import { getPhoneByAds } from "../../service/action/ads";
 
 const { width } = Dimensions.get("screen");
 
 function AdCard({ data, nav }) {
+    const handlePress = () => nav('Ad', data);
+
     return (
-        <View style={styles.cardContainer}>
-            <Image source={{ uri: data.image }} style={styles.image} resizeMode="cover" />
+        <TouchableOpacity style={styles.cardContainer} onPress={handlePress}>
+            <Image source={{ uri: str.website + data.image }} style={styles.image} resizeMode="cover" />
             <View style={styles.textContainer}>
                 <Text style={styles.title}>{data.title}</Text>
                 <View style={{flexDirection: "row", justifyContent: "space-between"}}>
                     <Text style={styles.date}>{shortDateDayFormat(data.createdAt)}</Text>
-                    <Text style={styles.date}>#{data.tag.replace(/;/g, " #")}</Text>
+                    {data.tag.split(';').length > 1 && (
+                        <Text style={styles.date}>#{data.tag.replace(/;/g, " #")}</Text>
+                    )}
                 </View>
             </View>
-        </View>
+        </TouchableOpacity>
     );
 }
 
 const styles = StyleSheet.create({
     cardContainer: {
-        // position: "relative",
         alignSelf: "center",
         borderRadius: 12,
         width: width * 0.9,
@@ -47,6 +46,7 @@ const styles = StyleSheet.create({
         overflow: "hidden",
     },
     image: {
+        backgroundColor: "black",
         width: "100%",
         height: "190",
     },

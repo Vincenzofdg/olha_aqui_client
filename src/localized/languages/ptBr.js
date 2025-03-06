@@ -1,4 +1,6 @@
 export default {
+    website: "https://olhaaquicondominios.com.br",
+    docUrl: "https://docs.google.com/gview?embedded=true&url=https://olhaaquicondominios.com.br",
     loginBtn: "entrar",
     access: "Acessar",
     seeMore: "Ver mais",
@@ -24,6 +26,7 @@ export default {
     adsTitle: "Anúncios",
     adsSubtitle: "Confira os anúncios abaixo",
     notAds: "Não há anúncios disponíveis.",
+    notNews: "Não há notícias disponíveis.",
     form: {
         contact: [
             { identifier: "name", label: "nome *", type: "text" },

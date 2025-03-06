@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, {useContext, useEffect, useState} from 'react';
 import { StyleSheet, SafeAreaView, ScrollView, Text, View } from "react-native";
+import {Global} from '../../context';
 import Theme from "../../theme";
 import str from "../../localized";
 import { MenuBtn } from "../../components/Button";
@@ -7,17 +8,20 @@ import { SideMenu } from "../../components/Modal";
 import { NewCard } from "../../components/Card";
 
 import { getAllNews } from "../../service/action/news";
+import {AdCard} from '../../components/Card/ads';
 
 function News({ navigation: { navigate } }) {
-    const [news, setNews] = useState([]);
-    const [localLoader, setLocalLoader] = useState(false);
+    const { menu, setLoader, loader } = useContext(Global);
+    const [data, setData] = useState([]);
 
     useEffect(() => {
         async function Jobs() {
-            setLocalLoader(true);
+            setLoader(true);
+
             const getNews = await getAllNews();
-            setNews(getNews);
-            setLocalLoader(false);
+
+            setData(getNews);
+            setLoader(false);
         }
 
         Jobs();
@@ -26,7 +30,7 @@ function News({ navigation: { navigate } }) {
     return (
         <SafeAreaView style={styles.container}>
             <SideMenu nav={navigate} />
-            <MenuBtn />
+            {!menu && <MenuBtn />}
             <ScrollView style={styles.content}>
                 <View style={styles.contentHeader}>
                     <Text style={styles.headerTitle}>
@@ -36,17 +40,11 @@ function News({ navigation: { navigate } }) {
                         {str.appNewsTitle}
                     </Text>
                 </View>
-                {localLoader ? (
-                    <></>
-                ) : (
-                    news.map(element => (
-                        <NewCard
-                            key={element.id}
-                            data={element}
-                            nav={navigate}
-                        />
-                    ))
-                )}
+                {
+                    data.length !== 0 ? (
+                        data.map(item => <NewCard key={item.id} data={item} nav={navigate} />)
+                    ) : !loader && <Text style={styles.noNews}>{str.notNews}</Text>
+                }
             </ScrollView>
         </SafeAreaView>
     );
@@ -77,6 +75,12 @@ const styles = StyleSheet.create({
         color: Theme.text[2],
         alignSelf: "flex-end",
         padding: 10,
+    },
+    noNews: {
+        fontSize: 16,
+        textAlign: "center",
+        color: Theme.text[2],
+        marginTop: 80
     },
 });
 
