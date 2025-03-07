@@ -11,7 +11,7 @@ export default {
     appNewsTitle: 'Jornal Olha Aqui!!!',
     date: param => `Data: ${param}`,
     lawSource: param => `Fonte: ${param}`,
-    homeNewTitle: 'Notícias Condomínios',
+    homeNewTitle: 'Notícias & Destaques',
     homeNewSubtitle:
         'Um jornal virtual para anunciantes e notícias sobre condomínios',
     juriTitle: 'Jurisprudência',
@@ -43,7 +43,7 @@ export default {
     card: {
         contact: {
             content:
-                'Divulgue anúncios e notícias exclusivas para sua comunidade',
+                'Anúncios e notícias exclusivas para sua comunidade',
             btn: 'Entre em contato',
             imgPath:
                 'https://imagens.usp.br/wp-content/uploads/Cidade_S%C3%A3o-Paulo_291-16_foto-Cec%C3%ADlia-Bastos-01.jpg',
@@ -55,7 +55,7 @@ export default {
             btn: 'Anuncie aqui',
         },
         announceSector: {
-            title: 'Veja os Anúncios do setores que mais te interessam',
+            title: 'Veja os Anúncios que mais te interessam',
             btns: ['Condomínio', 'Moradores'],
         },
     },
