@@ -14,6 +14,7 @@ export default {
     homeNewTitle: 'Notícias & Destaques',
     homeNewSubtitle:
         'Um jornal virtual para anunciantes e notícias sobre condomínios',
+    homeNewSlide: 'Deslize para o lado',
     juriTitle: 'Jurisprudência',
     juriSubtitle:
         'Veja as regras, leis, punições e outras informações de legislação do seu condomínio',
@@ -33,6 +34,7 @@ export default {
             {identifier: 'name', label: 'nome *', type: 'text'},
             {identifier: 'surname', label: 'sobrenome', type: 'text'},
             {identifier: 'email', label: 'email *', type: 'email'},
+            {identifier: 'phone', label: 'telefone *', type: 'phone'},
             {
                 identifier: 'description',
                 label: 'escreva sua mensagem *',
@@ -43,13 +45,13 @@ export default {
     card: {
         contact: {
             content:
-                'Anúncios e notícias exclusivas para sua comunidade',
+                'Anúncios e notícias exclusivas para sua comunidade de condominios',
             btn: 'Entre em contato',
             imgPath:
                 'https://imagens.usp.br/wp-content/uploads/Cidade_S%C3%A3o-Paulo_291-16_foto-Cec%C3%ADlia-Bastos-01.jpg',
         },
         announce: {
-            title: 'Notícias e Anúncios em um só lugar!!!',
+            title: 'Notícias e Anúncios em um só App!',
             content:
                 'Anuncie e publique suas matérias em um único lugar! Participe de nossa comunidade online para divulgar anúncios e compartilhar notícias com um público amplo e engajado. Fique por dentro das últimas novidades do mercado e mantenha-se conectado.',
             btn: 'Anuncie aqui',

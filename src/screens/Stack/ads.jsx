@@ -58,12 +58,18 @@ function Ads({navigation: {navigate}}) {
             {!menu && <MenuBtn />}
             <ScrollView style={styles.content}>
                 <View style={styles.header}>
-                    <Text style={styles.title}>{str.adsTitle}</Text>
-                    <Text style={styles.subtitle}>{str.adsSubtitle}</Text>
+                    <Text style={styles.title} allowFontScaling={false}>
+                        {str.adsTitle}
+                    </Text>
+                    <Text style={styles.subtitle} allowFontScaling={false}>
+                        {str.adsSubtitle}
+                    </Text>
                     <TouchableOpacity
                         style={styles.button}
                         onPress={() => setModalState(p => !p)}>
-                        <Text style={styles.buttonText}>{`#${
+                        <Text
+                            style={styles.buttonText}
+                            allowFontScaling={false}>{`${
                             !!selectedFilter ? selectedFilter : str.all
                         }`}</Text>
                     </TouchableOpacity>

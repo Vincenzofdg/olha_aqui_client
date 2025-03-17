@@ -21,14 +21,22 @@ function JurisprudenceCard({data}) {
 
     return (
         <View style={styles.cardContainer}>
-            <Text style={styles.title}>{data.title}</Text>
-            <Text style={styles.description}>{data.description}</Text>
-            <Text style={styles.date}>
+            <Text style={styles.title} allowFontScaling={false}>
+                {data.title}
+            </Text>
+            <Text style={styles.description} allowFontScaling={false}>
+                {data.description}
+            </Text>
+            <Text style={styles.date} allowFontScaling={false}>
                 {str.date(shortDateDayFormat(data.createdAt))}
             </Text>
-            <Text style={styles.source}>{str.lawSource(data.source)}</Text>
+            <Text style={styles.source} allowFontScaling={false}>
+                {str.lawSource(data.source)}
+            </Text>
             <TouchableOpacity onPress={handlePress} style={styles.linkBtn}>
-                <Text style={styles.btnText}>{str.access}</Text>
+                <Text style={styles.btnText} allowFontScaling={false}>
+                    {str.access}
+                </Text>
             </TouchableOpacity>
         </View>
     );

@@ -22,9 +22,19 @@ function PublicSector({nav}) {
                     return (
                         <TouchableOpacity
                             onPress={handlePress}
-                            key={'home-sector-' + i}>
-                            <Image source={getPicture[i]} style={styles.img} />
-                            <Text style={styles.imageLabel}>{btn}</Text>
+                            key={'home-sector-' + i}
+                            style={styles.option}>
+                            <View style={styles.button}>
+                                <Image
+                                    source={getPicture[i]}
+                                    style={styles.img}
+                                />
+                            </View>
+                            <Text
+                                style={styles.imageLabel}
+                                allowFontScaling={false}>
+                                {btn}
+                            </Text>
                         </TouchableOpacity>
                     );
                 })}
@@ -53,21 +63,22 @@ const styles = StyleSheet.create({
     option: {
         alignItems: 'center',
     },
-    optionImage: {
+    button: {
         width: 100,
         height: 100,
-    },
-    optionText: {
-        color: Theme.text[1],
-        fontSize: 14,
-        marginTop: 10,
+        borderWidth: 2,
+        borderColor: Theme.text[1],
+        borderRadius: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: Theme.background[1],
+        padding: 10,
     },
     img: {
-        width: 80,
-        height: 80,
-        padding: 10,
+        width: 60,
+        height: 60,
         tintColor: Theme.text[1],
-        objectFit: 'contain',
+        resizeMode: 'contain',
     },
     imageLabel: {
         textAlign: 'center',

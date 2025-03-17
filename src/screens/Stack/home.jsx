@@ -48,9 +48,14 @@ function Home({navigation: {navigate}}) {
                 <PublicAnnounce data={admContacts.website} />
                 <PublicSector nav={navigate} />
                 <View style={styles.newsHeader}>
-                    <Text style={styles.newsTitle}>{str.homeNewTitle}</Text>
-                    <Text style={styles.newsSubtitle}>
+                    <Text style={styles.newsTitle} allowFontScaling={false}>
+                        {str.homeNewTitle}
+                    </Text>
+                    <Text style={styles.newsSubtitle} allowFontScaling={false}>
                         {str.homeNewSubtitle}
+                    </Text>
+                    <Text style={styles.newsSubtitle} allowFontScaling={false}>
+                        {str.homeNewSlide}
                     </Text>
                 </View>
                 {highlightedNews.length === 0 ? (

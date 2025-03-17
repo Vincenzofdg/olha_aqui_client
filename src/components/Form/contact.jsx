@@ -20,13 +20,13 @@ function ContactForm() {
         name: '',
         surname: '',
         email: '',
+        phone: '',
         description: '',
     });
 
     useEffect(() => {
         async function hasSendedAlready() {
             const hasCached = await checkCache('messageSent');
-
             if (hasCached) {
                 setHasAlreadySentMessage(true);
             }
@@ -47,6 +47,7 @@ function ContactForm() {
                 name: '',
                 surname: '',
                 email: '',
+                phone: '',
                 description: '',
             });
             setForceReload(p => !p);
@@ -55,7 +56,9 @@ function ContactForm() {
     };
 
     return hasAlreadySentMessage ? (
-        <Text style={styles.msgSent}>{str.weHaveRecived}</Text>
+        <Text style={styles.msgSent} allowFontScaling={false}>
+            {str.weHaveRecived}
+        </Text>
     ) : (
         <View style={styles.container}>
             {str.form.contact.map((field, i) => (
@@ -74,51 +77,6 @@ const styles = StyleSheet.create({
     container: {
         width: '100%',
         padding: 20,
-    },
-    title: {
-        fontSize: 18,
-        color: '#001f3f',
-        textAlign: 'left',
-        marginBottom: 20,
-        fontWeight: 'bold',
-    },
-    input: {
-        borderWidth: 1,
-        borderColor: '#ddd',
-        borderRadius: 8,
-        padding: 12,
-        marginBottom: 12,
-        fontSize: 16,
-        backgroundColor: '#f9f9f9',
-    },
-    dropdown: {
-        borderWidth: 1,
-        borderColor: '#ddd',
-        borderRadius: 8,
-        marginBottom: 12,
-        backgroundColor: '#f9f9f9',
-    },
-    dropdownContainer: {
-        borderColor: '#ddd',
-        backgroundColor: '#fff',
-    },
-    textArea: {
-        height: 100,
-        textAlignVertical: 'top',
-    },
-    button: {
-        backgroundColor: '#0C313A',
-        borderRadius: 8,
-        paddingVertical: 10,
-        alignItems: 'center',
-        marginTop: 10,
-        alignSelf: 'center',
-        width: width * 0.5,
-    },
-    buttonText: {
-        color: '#fff',
-        fontSize: 16,
-        fontWeight: 'bold',
     },
     msgSent: {
         backgroundColor: Theme.background[3],

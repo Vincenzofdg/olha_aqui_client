@@ -25,9 +25,7 @@ function Ad({navigation: {navigate}, route: {params}}) {
                 style={styles.image}
                 resizeMode="contain"
             />
-            <View
-                style={styles.contactContainer}
-                onPress={() => links(params?.phone)}>
+            <View style={styles.contactContainer}>
                 {params?.whatsapp.length > 0 && (
                     <TouchableOpacity
                         onPress={() => whatsapp(params?.whatsapp)}>
@@ -62,23 +60,20 @@ const styles = StyleSheet.create({
     },
     image: {
         width,
-        height,
+        height: height * 0.7,
+        marginTop: -140,
     },
     contactContainer: {
         position: 'absolute',
-        bottom: 0,
+        bottom: 20,
         right: 20,
-    },
-
-    phoneContainer: {
-        position: 'absolute',
-        bottom: 40,
-        right: 30,
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 10,
     },
     phoneImg: {
         height: 50,
         width: 50,
-        marginBottom: 15,
     },
 });
 

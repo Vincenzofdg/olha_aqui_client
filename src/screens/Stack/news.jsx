@@ -33,10 +33,12 @@ function News({navigation: {navigate}}) {
             {!menu && <MenuBtn />}
             <ScrollView style={styles.content}>
                 <View style={styles.contentHeader}>
-                    <Text style={styles.headerTitle}>
+                    <Text style={styles.headerTitle} allowFontScaling={false}>
                         {str.seeNewsFromRegion}
                     </Text>
-                    <Text style={styles.headerSubtitle}>
+                    <Text
+                        style={styles.headerSubtitle}
+                        allowFontScaling={false}>
                         {str.appNewsTitle}
                     </Text>
                 </View>

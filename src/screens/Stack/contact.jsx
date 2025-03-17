@@ -15,8 +15,12 @@ function Contact({navigation: {navigate}}) {
             {!menu && <MenuBtn />}
             <ScrollView style={styles.content}>
                 <View style={styles.header}>
-                    <Text style={styles.title}>{str.contactTitle}</Text>
-                    <Text style={styles.subtitle}>{str.contactSubtitle}</Text>
+                    <Text style={styles.title} allowFontScaling={false}>
+                        {str.contactTitle}
+                    </Text>
+                    <Text style={styles.subtitle} allowFontScaling={false}>
+                        {str.contactSubtitle}
+                    </Text>
                 </View>
                 <ContactForm />
             </ScrollView>

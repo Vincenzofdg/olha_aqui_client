@@ -47,7 +47,8 @@ function SideMenu({nav}) {
                                             styles.text,
                                             hasBeenSelected &&
                                                 styles.selectedText,
-                                        ]}>
+                                        ]}
+                                        allowFontScaling={false}>
                                         {element[1]}
                                     </Text>
                                 </TouchableOpacity>

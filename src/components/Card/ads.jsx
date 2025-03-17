@@ -23,21 +23,14 @@ function AdCard({data, nav}) {
                 resizeMode="cover"
             />
             <View style={styles.textContainer}>
-                <Text style={styles.title}>{data.title}</Text>
-                <View
-                    style={{
-                        flexDirection: 'row',
-                        justifyContent: 'space-between',
-                    }}>
-                    <Text style={styles.date}>
-                        {shortDateDayFormat(data.createdAt)}
+                <Text style={styles.date} allowFontScaling={false}>
+                    {shortDateDayFormat(data.createdAt)}
+                </Text>
+                {data.tag.split(';').length > 1 && (
+                    <Text style={styles.tags} allowFontScaling={false}>
+                        #{data.tag.replace(/;/g, ' #')}
                     </Text>
-                    {data.tag.split(';').length > 1 && (
-                        <Text style={styles.date}>
-                            #{data.tag.replace(/;/g, ' #')}
-                        </Text>
-                    )}
-                </View>
+                )}
             </View>
         </TouchableOpacity>
     );
@@ -54,45 +47,32 @@ const styles = StyleSheet.create({
         shadowRadius: 6,
         elevation: 3,
         marginVertical: 8,
-        flexDirection: 'row',
+        backgroundColor: Theme.background[4], 
         overflow: 'hidden',
     },
     image: {
         backgroundColor: 'black',
         width: '100%',
-        height: '190',
+        height: 190,
     },
     textContainer: {
+        flexDirection: 'row', 
+        justifyContent: 'space-between', 
+        alignItems: 'center',
         padding: 10,
-        position: 'absolute',
-        bottom: 0,
-        backgroundColor: 'rgba(0, 0, 0, 0.55)',
+        backgroundColor: Theme.background[4], 
         width: '100%',
-    },
-    title: {
-        color: Theme.text[1],
-        fontSize: 17,
-        fontWeight: 'bold',
-        marginBottom: 8,
     },
     date: {
         fontSize: 12,
-        color: Theme.text[1],
-    },
-    linkBtn: {
-        marginTop: 10,
-        backgroundColor: Theme.background[5],
-        paddingVertical: 8,
-        paddingHorizontal: 16,
-        borderRadius: 8,
-        alignSelf: 'flex-start',
-    },
-    btnText: {
-        fontSize: 14,
-        color: Theme.text[1],
+        color: Theme.text[2],
         fontWeight: 'bold',
-        textAlign: 'center',
+    },
+    tags: {
+        fontSize: 12,
+        color: Theme.text[3],
     },
 });
 
 export {AdCard};
+

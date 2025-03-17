@@ -35,10 +35,10 @@ const styles = StyleSheet.create({
     TopBar: {
         backgroundColor: Theme.background[4],
         height: 3,
-        width: '90%',
-        borderRadius: 20,
-        marginBottom: 5,
-        marginTop: 5,
+        width: 20,
+        borderRadius: 10,
+        marginBottom: 3,
+        marginTop: 3,
         transform: [{rotate: '-30deg'}],
     },
     bottomBar: {

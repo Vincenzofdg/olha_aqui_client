@@ -7,13 +7,15 @@ import {
     Image,
     Platform,
 } from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 import str from '../../localized';
 import Theme from '../../theme';
-import {phone} from '../../tools';
 
 const {width} = Dimensions.get('screen');
 
 function PublicContact({data}) {
+    const navigation = useNavigation();
+
     return (
         <View style={styles.container}>
             <Image
@@ -22,11 +24,13 @@ function PublicContact({data}) {
             />
             <View style={styles.diagonalBackground} />
             <View style={styles.overlay}>
-                <Text style={styles.title}>{str.card.contact.content}</Text>
+                <Text style={styles.title} allowFontScaling={false}>
+                    {str.card.contact.content}
+                </Text>
                 <TouchableOpacity
                     style={styles.button}
-                    onPress={() => phone(data)}>
-                    <Text style={styles.buttonText}>
+                    onPress={() => navigation.navigate('Contact')}>
+                    <Text style={styles.buttonText} allowFontScaling={false}>
                         {str.card.contact.btn}
                     </Text>
                 </TouchableOpacity>

@@ -24,14 +24,18 @@ function NewCard({data, nav}) {
                 style={styles.image}
             />
             <View style={styles.content}>
-                <Text style={styles.title}>{data.title}</Text>
-                <Text style={styles.description}>{data.description}</Text>
+                <Text style={styles.title} allowFontScaling={false}>
+                    {data.title}
+                </Text>
+                <Text style={styles.description} allowFontScaling={false}>
+                    {data.description}
+                </Text>
                 <View style={styles.footer}>
-                    <Text style={styles.date}>
+                    <Text style={styles.date} allowFontScaling={false}>
                         {str.date(shortDateDayFormat(data.createdAt))}
                     </Text>
                     {data.tag.split(';').length > 1 && (
-                        <Text style={styles.tag}>
+                        <Text style={styles.tag} allowFontScaling={false}>
                             #{data.tag.replace(/;/g, ' #')}
                         </Text>
                     )}

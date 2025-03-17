@@ -18,14 +18,16 @@ function PublicAnnounce({data}) {
     return (
         <View style={styles.container}>
             <View style={styles.textContainer}>
-                <Text style={styles.title}>{str.card.announce.title}</Text>
-                <Text style={styles.description}>
+                <Text style={styles.title} allowFontScaling={false}>
+                    {str.card.announce.title}
+                </Text>
+                <Text style={styles.description} allowFontScaling={false}>
                     {str.card.announce.content}
                 </Text>
                 <TouchableOpacity
                     style={styles.button}
                     onPress={() => openBrowser(data)}>
-                    <Text style={styles.buttonText}>
+                    <Text style={styles.buttonText} allowFontScaling={false}>
                         {str.card.announce.btn}
                     </Text>
                 </TouchableOpacity>
@@ -67,14 +69,14 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     title: {
-        fontSize: width < 350 ? 15 : 17, 
+        fontSize: width < 350 ? 15 : 17,
         fontWeight: 'bold',
     },
     description: {
         width: '95%',
         textAlign: 'left',
-        paddingLeft: 3, 
-        fontSize: width < 350 ? 12 : 14, 
+        paddingLeft: 3,
+        fontSize: width < 350 ? 12 : 14,
         lineHeight: 18,
     },
     button: {
@@ -88,7 +90,7 @@ const styles = StyleSheet.create({
     buttonText: {
         color: Theme.text[1],
         fontWeight: 'bold',
-        fontSize: 13, 
+        fontSize: 13,
     },
     image: {
         flex: 1,
@@ -97,6 +99,8 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: width < 350 ? -10 : -20,
         right: width < 350 ? -18 : -40,
+        opacity: 0.8,
+        zIndex: -1,
     },
 });
 
