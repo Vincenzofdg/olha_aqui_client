@@ -11,7 +11,7 @@ const {height, width} = Dimensions.get('window');
 function AdFilteredList({
     navigation: {navigate},
     route: {
-        params: {status},
+        params: {target},
     },
 }) {
     const {setLoader, loader} = useContext(Global);
@@ -21,12 +21,13 @@ function AdFilteredList({
         const fetchAds = async () => {
             setLoader(true);
             const adsData = await getAllAnnounces();
-
             const filterType = adsData.data.filter(
-                item => item.highlighted === status,
+                item => item.target === target,
             );
-
-            setData(filterType);
+            const bothSides = adsData.data.filter(
+                item => item.target === "all",
+            );
+            setData([...filterType, ...bothSides]);
             setLoader(false);
         };
 

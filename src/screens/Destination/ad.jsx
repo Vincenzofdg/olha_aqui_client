@@ -60,8 +60,7 @@ const styles = StyleSheet.create({
     },
     image: {
         width,
-        height: height * 0.7,
-        marginTop: -140,
+        height,
     },
     contactContainer: {
         position: 'absolute',

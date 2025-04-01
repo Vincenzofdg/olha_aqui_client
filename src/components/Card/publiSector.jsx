@@ -16,7 +16,7 @@ function PublicSector({nav}) {
                     const getPicture = [BuildingImg, PeopleImg];
 
                     const handlePress = () => {
-                        nav('AdsFiltered', {status: i > 0});
+                        nav('AdsFiltered', {target: i > 0 ? "resident" : "condominium"});
                     };
 
                     return (

@@ -8,6 +8,7 @@ import { MenuBtn } from '../../components/Button';
 import { JurisprudenceCard } from '../../components/Card';
 import { getAllLaw } from '../../service/action/laws';
 import { getAllAnnounces } from '../../service/action/announces';
+import {JurisHighlightedList} from '../../components/Flatlist';
 import { Dimensions } from 'react-native';
 
 
@@ -15,7 +16,7 @@ const { width } = Dimensions.get('window');
 function Jurisprudence({ navigation: { navigate } }) {
     const { setLoader, loader, menu } = useContext(Global);
     const [data, setData] = useState([]);
-    const [pfjImage, setPfjImage] = useState(null);
+    const [dataHighlighted, setDataHighlighted] = useState([]);
 
     useEffect(() => {
         async function fetchData() {
@@ -25,10 +26,10 @@ function Jurisprudence({ navigation: { navigate } }) {
             setData(getLaws);
 
             const ads = await getAllAnnounces();
-            const pfjAd = ads.data.find(ad => ad.title === "PFJ Advocacia");
 
-            if (pfjAd) setPfjImage(str.website + pfjAd.image);
+            const pfjAd = ads.data.filter(ad => !!ad.highlighted);
 
+            setDataHighlighted(pfjAd);
             setLoader(false);
         }
 
@@ -48,15 +49,9 @@ function Jurisprudence({ navigation: { navigate } }) {
                         {str.juriSubtitle}
                     </Text>
                 </View>
-
-                {pfjImage && (
-                    <Image
-                        source={{ uri: pfjImage }}
-                        style={styles.adImage}
-                        resizeMode="cover"
-                    />
+                {dataHighlighted.length > 0 && (
+                    <JurisHighlightedList data={dataHighlighted} />
                 )}
-
                 {data.length !== 0
                     ? data.map(item => (
                           <JurisprudenceCard key={item.id} data={item} nav={navigate} />
@@ -96,13 +91,6 @@ const styles = StyleSheet.create({
         color: Theme.text[2],
         fontWeight: '500',
         textAlign: 'center',
-    },
-    adImage: {
-        width: width * 0.9, 
-        height: (width * 0.9) * 0.5,
-        alignSelf: 'center',
-        borderRadius: 10,
-        marginBottom: 15,
     },
 });
 
